@@ -5,7 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+gem 'sqlite3'
+#gem 'pg'
 
 group :development do 
  gem 'rspec-rails', '3.0.2'
@@ -17,5 +18,5 @@ end
 
 #gem 'therubyracer'
 #gem 'tzinfo-data'
-#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
