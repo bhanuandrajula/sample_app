@@ -1,5 +1,5 @@
-# Ruby on rails tutorial : sample_app
+# Sample_app written on 09th Aug 2014 at 23:45
 
-This application is written by [*Bhanu Prakash Andrajula](mailto:bhanuandrajula@gmail.com)
+This application is written by [*Bhanu Prakash Andrajula*](mailto:bhanua1985@gmail.com)
 
 
