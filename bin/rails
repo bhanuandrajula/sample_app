@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/c/RailsInstaller/Ruby1.9.3/bin/rails
 APP_PATH = File.expand_path('../../config/application',  __FILE__)
 require_relative '../config/boot'
 require 'rails/commands'
