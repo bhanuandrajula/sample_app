@@ -23,6 +23,10 @@ group :test do
  gem 'rspec', '3.0.0'
 end
 
+group :production do
+	gem 'thin'
+	gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
