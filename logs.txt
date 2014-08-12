@@ -1,0 +1,101 @@
+2014-08-12T20:26:02+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:26:39+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Ruby/Rails app
+2014-08-12T20:30:44+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:32:07+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Ruby/Rails app
+2014-08-12T20:33:18+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:34:28+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Ruby/Rails app
+2014-08-12T20:34:47+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:36:13+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Ruby/Rails app
+2014-08-12T20:37:27+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:38:36+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Ruby/Rails app
+2014-08-12T20:39:43+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:41:17.971534+00:00 heroku[api]: Scale to web=1 by bhanua1985@gmail.com
+2014-08-12T20:41:18+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-08-12T20:41:18.393652+00:00 heroku[api]: Set DATABASE_URL config vars by bhanua1985@gmail.com
+2014-08-12T20:41:18.393733+00:00 heroku[api]: Release v4 created by bhanua1985@gmail.com
+2014-08-12T20:41:18.494210+00:00 heroku[api]: Attach HEROKU_POSTGRESQL_GRAY resource by bhanua1985@gmail.com
+2014-08-12T20:41:18.494302+00:00 heroku[api]: Release v5 created by bhanua1985@gmail.com
+2014-08-12T20:41:18.689159+00:00 heroku[api]: Deploy 8ee0541 by bhanua1985@gmail.com
+2014-08-12T20:41:18.689235+00:00 heroku[api]: Release v6 created by bhanua1985@gmail.com
+2014-08-12T20:41:22.897899+00:00 app[web.1]: /usr/bin/env: ruby.exe: No such file or directory
+2014-08-12T20:41:24.210956+00:00 heroku[web.1]: State changed from starting to crashed
+2014-08-12T20:41:24.211663+00:00 heroku[web.1]: State changed from crashed to starting
+2014-08-12T20:41:21.994729+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 6940 -e $RAILS_ENV`
+2014-08-12T20:41:24.201997+00:00 heroku[web.1]: Process exited with status 127
+2014-08-12T20:41:27.433787+00:00 app[web.1]: /usr/bin/env: ruby.exe: No such file or directory
+2014-08-12T20:41:26.702148+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 57020 -e $RAILS_ENV`
+2014-08-12T20:41:28.568335+00:00 heroku[web.1]: Process exited with status 127
+2014-08-12T20:41:28.573160+00:00 heroku[web.1]: State changed from starting to crashed
+2014-08-12T20:41:31.645219+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=c0c8c8dd-3889-4403-ac40-8e0855165e47 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:41:32.515213+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=fa886eb9-7d55-459d-8102-17f024e5e576 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:41:52.108504+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=38230abb-90b8-4b3b-be3c-a4a0247ad245 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:41:52.516537+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=543a4c62-7d78-4585-afe3-2465700e7248 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:43:04.333551+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=2bef7641-f0aa-4a54-9a06-b1fad0e3ef5d fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:43:04.660302+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=839f5ccb-0d85-4421-9ea7-20fdadae8f2e fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:43:34.368181+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=0cbb29ba-85fd-4874-85e3-28bec33a06ec fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:43:34.752144+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=4116695a-2970-44cb-a941-26c58b84a61f fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:43:34.785176+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=b59febf9-f0d4-4b0a-a13f-a18316f2a2e3 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:47:33.534764+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=8216dd64-ed69-47ec-9ae1-1fda98f2064c fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:48:07.782255+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=ef797fed-92d6-4878-bf33-b658d3f489c0 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:48:08.133479+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=03f68445-1b0f-4aff-8807-55452693af83 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:51:53.472079+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=workbhanu.herokuapp.com request_id=1084f4bf-91b5-40c7-9799-4bb0fe6d035d fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:51:53.777466+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=workbhanu.herokuapp.com request_id=1de1d751-f71b-4c86-8b0e-4eeca4593363 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:51:53.816041+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=workbhanu.herokuapp.com request_id=6baeb0e5-9e59-4565-9508-069cd45bdf3b fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:53:20.719261+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=workbhanu.herokuapp.com request_id=33d3f64a-7bbf-4051-994d-225760f3f944 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:56:25+00:00 heroku[slug-compiler]: Slug compilation started
+2014-08-12T20:56:59+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-08-12T20:56:59.016443+00:00 heroku[api]: Deploy 59bb0bb by bhanua1985@gmail.com
+2014-08-12T20:56:59.016506+00:00 heroku[api]: Release v7 created by bhanua1985@gmail.com
+2014-08-12T20:56:59.622106+00:00 heroku[web.1]: State changed from crashed to starting
+2014-08-12T20:57:04.141867+00:00 app[web.1]: /usr/bin/env: ruby.exe: No such file or directory
+2014-08-12T20:57:05.498827+00:00 heroku[web.1]: State changed from starting to crashed
+2014-08-12T20:57:05.499555+00:00 heroku[web.1]: State changed from crashed to starting
+2014-08-12T20:57:05.489530+00:00 heroku[web.1]: Process exited with status 127
+2014-08-12T20:57:03.143312+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 12686 -e $RAILS_ENV`
+2014-08-12T20:57:09.275275+00:00 app[web.1]: /usr/bin/env: ruby.exe: No such file or directory
+2014-08-12T20:57:10.473589+00:00 heroku[web.1]: State changed from starting to crashed
+2014-08-12T20:57:08.315782+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 3984 -e $RAILS_ENV`
+2014-08-12T20:57:10.463018+00:00 heroku[web.1]: Process exited with status 127
+2014-08-12T20:57:13.989946+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=boiling-fjord-2135.herokuapp.com request_id=7846f4f8-f05a-4464-a87a-53c067498b56 fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T20:57:15.514199+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=boiling-fjord-2135.herokuapp.com request_id=50e4dea1-c429-4d5f-bfe8-1291f4262e9d fwd="174.46.65.165" dyno= connect= service= status=503 bytes=
+2014-08-12T21:01:05.415528+00:00 heroku[web.1]: State changed from crashed to starting
+2014-08-12T21:01:08.749508+00:00 app[web.1]: /usr/bin/env: ruby.exe: No such file or directory
+2014-08-12T21:01:07.999183+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 18954 -e $RAILS_ENV`
+2014-08-12T21:01:09.970441+00:00 heroku[web.1]: State changed from starting to crashed
+2014-08-12T21:01:09.958028+00:00 heroku[web.1]: Process exited with status 127
+2014-08-12T21:01:22.763431+00:00 heroku[api]: Starting process with command `bundle exec rake db:migrate` by bhanua1985@gmail.com
+2014-08-12T21:01:26.810222+00:00 heroku[run.8157]: State changed from starting to up
+2014-08-12T21:01:26.808238+00:00 heroku[run.8157]: Awaiting client
+2014-08-12T21:01:26.884485+00:00 heroku[run.8157]: Starting process with command `bundle exec rake db:migrate`
+2014-08-12T21:01:28.445681+00:00 heroku[run.8157]: Process exited with status 127
+2014-08-12T21:01:28.456570+00:00 heroku[run.8157]: State changed from up to complete
+2014-08-12T21:02:05.109187+00:00 heroku[api]: Starting process with command `rails console` by bhanua1985@gmail.com
+2014-08-12T21:02:08.720677+00:00 heroku[run.7738]: State changed from starting to up
+2014-08-12T21:02:09.633719+00:00 heroku[run.7738]: State changed from up to complete
+2014-08-12T21:02:09.622527+00:00 heroku[run.7738]: Process exited with status 127
+2014-08-12T21:02:08.368578+00:00 heroku[run.7738]: Awaiting client
+2014-08-12T21:02:08.398963+00:00 heroku[run.7738]: Starting process with command `rails console`
+2014-08-12T21:02:39.569892+00:00 heroku[api]: Starting process with command `bundle exec rake db:migrate` by bhanua1985@gmail.com
+2014-08-12T21:02:43.580691+00:00 heroku[run.8207]: State changed from starting to up
+2014-08-12T21:02:44.463544+00:00 heroku[run.8207]: State changed from up to complete
+2014-08-12T21:02:43.284701+00:00 heroku[run.8207]: Awaiting client
+2014-08-12T21:02:43.315636+00:00 heroku[run.8207]: Starting process with command `bundle exec rake db:migrate`
+2014-08-12T21:02:44.446600+00:00 heroku[run.8207]: Process exited with status 127
+2014-08-12T21:03:35.088747+00:00 heroku[api]: Starting process with command `c:/RailsInstaller/Ruby1.9.3/bin/rake db:migrate` by bhanua1985@gmail.com
+2014-08-12T21:03:39.564372+00:00 heroku[run.5821]: Awaiting client
+2014-08-12T21:03:39.655919+00:00 heroku[run.5821]: Starting process with command `c:/RailsInstaller/Ruby1.9.3/bin/rake db:migrate`
+2014-08-12T21:03:39.662691+00:00 heroku[run.5821]: State changed from starting to up
+2014-08-12T21:03:42.216627+00:00 heroku[run.5821]: State changed from up to complete
+2014-08-12T21:03:42.209422+00:00 heroku[run.5821]: Process exited with status 127
+2014-08-12T21:04:21.205193+00:00 heroku[api]: Starting process with command `bash` by bhanua1985@gmail.com
+2014-08-12T21:04:24.937598+00:00 heroku[run.8058]: State changed from starting to up
+2014-08-12T21:04:24.900731+00:00 heroku[run.8058]: Starting process with command `bash`
+2014-08-12T21:04:24.851532+00:00 heroku[run.8058]: Awaiting client
+2014-08-12T21:05:43.353270+00:00 heroku[run.8058]: Process exited with status 127
+2014-08-12T21:05:43.357574+00:00 heroku[run.8058]: State changed from up to complete
+2014-08-12T21:07:22.609607+00:00 heroku[api]: Starting process with command `bash -c 'which -a ruby'` by bhanua1985@gmail.com
+2014-08-12T21:07:26.397038+00:00 heroku[run.1284]: Awaiting client
+2014-08-12T21:07:26.433580+00:00 heroku[run.1284]: Starting process with command `bash -c 'which -a ruby'`
+2014-08-12T21:07:26.442953+00:00 heroku[run.1284]: State changed from starting to up
+2014-08-12T21:07:28.244919+00:00 heroku[run.1284]: State changed from up to complete
+2014-08-12T21:07:28.234108+00:00 heroku[run.1284]: Process exited with status 0
