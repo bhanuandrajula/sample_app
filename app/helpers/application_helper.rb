@@ -2,7 +2,7 @@ module ApplicationHelper
 
 #Return a title on a page basis
 	def title
-	base_title = "Ruby on Rails Tutorial Sample App"
+	base_title = "Bhanu Andrajula App"
 		if @title.nil?
 		 base_title
 		 else
