@@ -28,6 +28,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.4.0)
     arel (5.0.1.20140414130214)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
@@ -171,6 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   ZenTest
+  annotate (= 2.4.0)
   autotest
   autotest-fsevent
   autotest-growl

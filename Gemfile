@@ -9,13 +9,14 @@ group :development do
 	# gem 'spork-rails', '4.0.0'
 	#  gem 'guard-spork', '1.5.0'
 	#  gem 'childprocess', '0.3.6'
-	gem 'capybara','2.4.1'
+	#gem 'capybara','2.4.1'
 	gem 'webrat'
 	gem 'ZenTest'
 	gem 'autotest'
 	gem 'autotest-growl'
 	gem 'autotest-fsevent'
 	gem 'sqlite3'
+	gem 'annotate','2.4.0'
 end
 
 group :test do
