@@ -21,6 +21,7 @@ end
 group :test do
  gem 'rspec', '3.0.0'
  gem 'spork','0.9.2'
+ gem 'capybara','2.4.1'
 end
 
 group :production do
