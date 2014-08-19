@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   @title = "Sign up"
   end
   
+  def show
+	#@user = User.find(1)
+	@user = User.find(params[:id])
+  end
+  
   def create
     @user = User.new(user_params) ## Invoke user_params method
     if @user.save
