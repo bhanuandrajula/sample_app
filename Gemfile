@@ -17,6 +17,7 @@ group :development do
 	gem 'autotest-fsevent'
 	gem 'sqlite3'
 	gem 'annotate','2.4.0'
+	#gem 'protected_attributes'
 end
 
 group :test do
