@@ -99,12 +99,66 @@ RSpec.describe User, :type => :model do
 		before(:each) do
 			@user = User.create!(@attr)
 		end
-		
+				
 		it "should have an encrypted password" do
 			@user.should respond_to(:encrypted_password)
 		end
+
+		it "should set the encrypted password" do
+			@user.encrypted_password.should_not be_blank
+		end
+		
+		it "Should have a salt" do
+			@user.should respond_to(:salt)
+		end
 		
 	end
+	
+	describe "has_password method" do
+	
+		before(:each) do
+			@user = User.create!(@attr)
+		end
+	
+		it "Should exists" do
+			@user.should respond_to(:has_password?)
+		end
+		
+		it "Should return true if the password match" do
+			@user.has_password?(@attr[:password]).should be_truthy
+		end
+		
+		it "Should return false if the password doesnot match" do
+			@user.has_password?("invalid").should be_falsey
+		end
+			
+	end
+	
+	describe "authenticate method" do
+	  
+	   before(:each) do
+	     @user = User.create!(@attr)
+	   end
+	   
+	   it "Should exists" do
+	     User.should respond_to(:authenticate)
+	     
+	   end
+	   it "Should return nil on email/password mismatch" do
+	     User.authenticate(@attr[:email],"wrongpass").should be nil
+	   end
+	   
+	   it "Should return nil for an email address with no user" do
+	     User.authenticate("bar@foot.com",@attr[:password]).should be nil
+	   end
+	   
+	   it "should return the user on email/pass match" do
+	     User.authenticate(@attr[:email],@attr[:password]).should == @user
+	     
+	   end
+	  
+	end
+	
 	
 end
 
