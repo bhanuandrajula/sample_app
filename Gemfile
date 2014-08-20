@@ -10,6 +10,7 @@ group :development do
 	#  gem 'guard-spork', '1.5.0'
 	#  gem 'childprocess', '0.3.6'
 	#gem 'capybara','2.4.1'
+	gem 'autotest-rails'
 	gem 'webrat'
 	gem 'ZenTest'
 	gem 'autotest'
@@ -24,6 +25,7 @@ group :test do
  gem 'rspec', '3.0.0'
  gem 'spork','0.9.2'
  gem 'capybara','2.4.1'
+ gem 'autotest-rails'
 end
 
 group :production do

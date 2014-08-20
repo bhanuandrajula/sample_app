@@ -35,6 +35,8 @@ GEM
     autotest-fsevent (0.2.9)
       sys-uname
     autotest-growl (0.2.16)
+    autotest-rails (4.2.1)
+      ZenTest (~> 4.5)
     builder (3.2.2)
     capybara (2.4.1)
       mime-types (>= 1.16)
@@ -176,6 +178,7 @@ DEPENDENCIES
   autotest
   autotest-fsevent
   autotest-growl
+  autotest-rails
   capybara (= 2.4.1)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
