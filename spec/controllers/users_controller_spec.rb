@@ -25,6 +25,11 @@ RSpec.describe UsersController, :type => :controller do
 		assigns(:user).should == @user
 	end
 	
+	it "should have the right title" do
+		get:show, :id => @user
+		response.should have_title(@user.name)
+	end
+	
 	
 end
 
