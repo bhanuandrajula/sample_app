@@ -13,8 +13,8 @@ group :development do
 	# gem 'spork-rails', '4.0.0'
 	#  gem 'guard-spork', '1.5.0'
 	#  gem 'childprocess', '0.3.6'
-	gem 'capybara','2.4.1'
-	gem 'autotest-rails'
+	#gem 'capybara','2.4.1'
+	#gem 'autotest-rails'
 	gem 'webrat'
 	gem 'ZenTest'
 	#gem 'autotest'
@@ -24,7 +24,7 @@ group :development do
 	gem 'annotate','2.4.0'
 	gem 'railties'
 	#gem 'protected_attributes'
-	gem 'rails', '4.1.1'
+	#gem 'rails', '4.1.1'
 
 end
 
