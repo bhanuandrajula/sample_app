@@ -5,9 +5,10 @@ source 'https://rubygems.org'
 
 # Use sqlite3 as the database for Active Record
 
+gem 'gravatar_image_tag' ,'0.1.0'
 
 group :development do
-	 gem 'rspec-rails', '3.0.2'
+#	 gem 'rspec-rails', '3.0.2'
 	# gem 'spork-rails', '4.0.0'
 	#  gem 'guard-spork', '1.5.0'
 	#  gem 'childprocess', '0.3.6'
@@ -28,6 +29,7 @@ end
 
 group :test do
  gem 'rspec', '3.0.0'
+ gem 'rspec-rails','3.0.2'
  gem 'spork','0.9.2'
  gem 'capybara','2.4.1'
  gem 'autotest-rails'

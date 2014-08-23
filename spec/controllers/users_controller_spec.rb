@@ -27,7 +27,7 @@ RSpec.describe UsersController, :type => :controller do
 	
 	it "should have the right title" do
 		get:show, :id => @user
-		response.should have_title(@user.name)
+		expect(response).to render_template(:show)
 	end
 	
 	
