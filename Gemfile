@@ -2,23 +2,28 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+
 # Use sqlite3 as the database for Active Record
+
+
 group :development do
 	 gem 'rspec-rails', '3.0.2'
 	# gem 'spork-rails', '4.0.0'
 	#  gem 'guard-spork', '1.5.0'
 	#  gem 'childprocess', '0.3.6'
 	#gem 'capybara','2.4.1'
-	gem 'autotest-rails'
+	#gem 'autotest-rails'
 	gem 'webrat'
 	gem 'ZenTest'
-	gem 'autotest'
-	gem 'autotest-growl'
-	gem 'autotest-fsevent'
+	#gem 'autotest'
+	#gem 'autotest-growl'
+	#gem 'autotest-fsevent'
 	gem 'sqlite3'
 	gem 'annotate','2.4.0'
+	gem 'railties'
 	#gem 'protected_attributes'
+	gem 'rails', '4.1.1'
+
 end
 
 group :test do
@@ -26,6 +31,7 @@ group :test do
  gem 'spork','0.9.2'
  gem 'capybara','2.4.1'
  gem 'autotest-rails'
+ gem 'factory_girl_rails','4.2.0'
 end
 
 group :production do

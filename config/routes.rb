@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   
-  get 'users/new'
+  #get 'users/new'
   root 'pages#home'
   get '/contact' => 'pages#contact'
   get '/about' => 'pages#about'

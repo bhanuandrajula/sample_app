@@ -1,8 +1,36 @@
 require 'rails_helper'
+require 'factory_girl_rails'
+require 'spec_helper'
 
 RSpec.describe UsersController, :type => :controller do
  render_views
-  describe "GET new" do
+ 
+ 	before(:each) do
+	@attr = {:name => "Sriniuser",:email=> "Sriniuser@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+	end
+
+ 
+ describe "Get Show" do
+  		before(:each) do
+			@user = User.create!(@attr)
+		end
+		
+	it "Should be successful" do
+		get :show, :id => @user
+		response.should be_success
+	end
+	
+	it "Should find the right user" do
+		get :show, :id =>@user
+		assigns(:user).should == @user
+	end
+	
+	
+end
+
+ 
+ 
+ describe "GET new" do
   
     it "returns http success" do
       get :new
@@ -18,3 +46,4 @@ RSpec.describe UsersController, :type => :controller do
   end
 
 end
+ 
