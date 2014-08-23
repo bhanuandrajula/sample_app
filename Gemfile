@@ -2,18 +2,19 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.1.1'
 
 # Use sqlite3 as the database for Active Record
 
 gem 'gravatar_image_tag' ,'0.1.0'
 
 group :development do
-#	 gem 'rspec-rails', '3.0.2'
+	 gem 'rspec-rails', '3.0.2'
 	# gem 'spork-rails', '4.0.0'
 	#  gem 'guard-spork', '1.5.0'
 	#  gem 'childprocess', '0.3.6'
-	#gem 'capybara','2.4.1'
-	#gem 'autotest-rails'
+	gem 'capybara','2.4.1'
+	gem 'autotest-rails'
 	gem 'webrat'
 	gem 'ZenTest'
 	#gem 'autotest'
@@ -29,7 +30,6 @@ end
 
 group :test do
  gem 'rspec', '3.0.0'
- gem 'rspec-rails','3.0.2'
  gem 'spork','0.9.2'
  gem 'capybara','2.4.1'
  gem 'autotest-rails'
