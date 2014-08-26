@@ -30,6 +30,11 @@ RSpec.describe "LayoutLinks", :type => :request do
     response.should render_template('users/new')
   end
   
+    it "should have a Signin page '/signin'" do
+    get '/signin'
+    response.should render_template('sessions/new')
+  end
+  
   #Integration tests not working :( so commenting
   
   # it "Should have the right links on the layouts" do
