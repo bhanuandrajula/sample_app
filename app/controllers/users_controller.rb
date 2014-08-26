@@ -7,11 +7,31 @@ class UsersController < ApplicationController
   end
   
   def new
-  @user = User.new
-  @title = "Sign up"
+	@user = User.new
+    @title = "Sign up"
   end
   
+  def create
 
+	@user = User.new(user_params)
+	flash[:success] = "welcome to Bhanu's App"
+	if @user.save
+	#puts "Inside save"
+	redirect_to user_path(@user)
+		# Handle a succesfull save
+	else
+		#puts "Inside else"
+		@title = "Sign up"
+		render 'new'
+	end	
+
+  end
+
+  	private
+	def user_params
+	  params.require(:user).permit(:name, :email, :password,
+								   :password_confirmation)
+	end
   
   
   

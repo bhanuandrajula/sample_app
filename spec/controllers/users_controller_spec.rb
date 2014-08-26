@@ -49,6 +49,58 @@ end
 	end
 	
   end
+  
+  describe "POST 'Create'" do
+  
+	describe "Failure" do
+		before(:each) do
+			@attr ={:name =>"", :email => "", :password => "", :password_confirmation => ""}
+		end
+		
+		it " Should have the right title" do 
+			post :create, :user=>@attr
+			expect(response).to render_template(:new)
+		end
+		
+		it " Should render the new page" do
+			post :create, :user=>@attr
+			expect(response).to render_template('new')
+		
+		end
+		
+		it " Should not create a new user" do
+			lambda do
+				post :create, :user=>@attr
+			end.should_not change(User, :count)
+		end
+	end
+	
+	describe "Success" do
+	
+		before(:each) do
+			@attr = {:name => "New User" , :email => "newuser@gmail.com" , :password => "newpass" , :password_confirmation => "newpass"}
+		end
+		
+		it "Should create a user" do
+			lambda do
+				post :create, :user=>@attr
+			end.should change(User, :count).by(1)
+		end
+		
+		it "Should redirect the user show page" do
+			post :create, :user=>@attr
+			response.should redirect_to(user_path(assigns(:user)))
+		end
+		
+		it "Should have a welcome message" do
+			post :create, :user =>@attr
+			flash[:success].should =~ /welcome to Bhanu's App/i
+		end
+		
+	
+	end
+	
+  end  
 
 end
  
