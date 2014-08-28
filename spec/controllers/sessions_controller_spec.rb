@@ -2,7 +2,17 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, :type => :controller do
 
+ 	before(:each) do
+	@attr = {:name => "Sriniuser1",:email=> "Sriniuser1@gmail.com", :password => "srini1@123" , :password_confirmation => "srini1@123"}
+	end
+
+
   describe "GET new" do
+  
+  			before(:each) do
+				@user = User.create!(@attr)
+			end
+	
 	
     it "returns http success" do
       get :new
@@ -36,5 +46,30 @@ RSpec.describe SessionsController, :type => :controller do
 			flash.now[:error].should =~ /invalid/i
 		end
 	end
+	
+
+	describe "Success" do
+	
+		before(:each) do
+			#@user = User.create!(@attr)
+			@attr1 = {:name => "Sriniuser1",:email => "Sriniuser@gmail.com", :password => "srini@123"}
+			@user = User.create!(@attr1)
+		end
+		
+		it "Should sign in the user" do
+			post :create, :session =>@attr1
+			#fill in with tests for sign in user
+			controller.current_user.should == @user
+			controller.should be_signed_in
+		end
+		
+		it "Should redirect to the user show page" do
+			post :create, :session =>@attr1
+			response.should redirect_to(user_path(@user))
+		end
+		
+	end
+	
+	
   end	
 end

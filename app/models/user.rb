@@ -42,8 +42,13 @@ before_save :encrypt_password # before saving the above parameters call the encr
     	  user = find_by_email(email)
     	  return nil if user.nil?
     	  return user if user.has_password?(submitted_password)
-    	  
-    	end
+		end
+		
+		def authenticate_with_salt (id,cookie_salt)
+			user = find_by_id(id)
+			(user && user.salt == cookie_salt) ? user:nil
+			
+		end
   end
 
 private #making the below method as private
@@ -68,3 +73,17 @@ private #making the below method as private
 
 
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#
+

@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
 		flash.now[:error] = "Invalid email/password combination" # user .now to persist only for this screen
 		render 'new'
 	else
-						#handle successful session
+	#handle successful session
+	
+	sign_in user
+	redirect_to user
+						
 	end
 	
   end
