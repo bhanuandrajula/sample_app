@@ -30,4 +30,16 @@ RSpec.describe "Users", :type => :request do
 	   end	   
    
   end
+  
+	  describe "Sign in" do
+		describe "Failure" do
+			it "Should not the sign the user in " do 
+				visit signin_path
+				fill_in "Email", :with => ""
+				fill_in "Password" , :with => ""
+				click_button "Sign in"
+			end
+		end
+			
+	  end
 end

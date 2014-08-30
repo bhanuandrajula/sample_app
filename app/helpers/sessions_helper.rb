@@ -17,6 +17,11 @@ module SessionsHelper
 		!current_user.nil?
 	end
 	
+	def sign_out
+		cookies.delete(:remember_token)
+		current_user = nil  # to do this put some code in spec_helper.rb i.e test_sign_in
+	end
+	
 	private
 	
 	def user_from_remember_token

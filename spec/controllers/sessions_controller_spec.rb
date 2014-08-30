@@ -72,4 +72,20 @@ RSpec.describe SessionsController, :type => :controller do
 	
 	
   end	
+  
+  describe "Delete 'Destroy'" do 
+  		before(:each) do
+			#@user = User.create!(@attr)
+			@attr1 = {:name => "Sriniuser1",:email => "Sriniuser@gmail.com", :password => "srini@123"}
+			@user = User.create!(@attr1)
+		end
+	it "Should sign a user out" do
+		test_sign_in(@user)
+		delete :destroy
+		controller.should_not be_signed_in
+		response.should redirect_to(root_path)
+		
+	end
+	
+  end
 end

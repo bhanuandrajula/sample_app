@@ -2,6 +2,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe "LayoutLinks", :type => :request do
+
  
   describe "GET /layout_links" do
   include Rails.application.routes.url_helpers
@@ -51,6 +52,35 @@ RSpec.describe "LayoutLinks", :type => :request do
 	# response.should render_template('pages/signup')
   
   # end
+  
+  describe "when not signed in" do
+	it "Should have a signed in link" do
+		get '/signin'
+		response.should render_template('sessions/new')
+	end
+  end
+  
+  describe "when signed in" do
+	
+	before(:each) do
+		@attr = {:name => "Sriniuser",:email=> "Sriniuser@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+		@user = User.create!(@attr)
+		visit signin_path
+		fill_in "Email", 	:with => @user.email
+		fill_in "Password",	:with => @user.password
+		click_button "Sign in"
+	end
+	it " should have a signout link" do
+		get '/signout'
+		#response.should render_template('sessions/destroy')
+		
+	
+	end
+	
+	it "Should have a profile page" do
+		
+	end
    
   end
+ end 
 end

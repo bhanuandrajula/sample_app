@@ -97,6 +97,11 @@ end
 			flash[:success].should =~ /welcome to Bhanu's App/i
 		end
 		
+		it "Should sign the user in" do
+			post :create, :user =>@attr
+			controller.should be_signed_in
+		end
+		
 	
 	end
 	
