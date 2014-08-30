@@ -77,9 +77,7 @@ RSpec.describe "LayoutLinks", :type => :request do
 	
 	end
 	
-	it "Should have a profile page" do
-		
-	end
+	#it { should has_link('Settings',href: edit_user_path(@user)) }
    
   end
  end 

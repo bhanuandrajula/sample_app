@@ -106,6 +106,84 @@ end
 	end
 	
   end  
+  
+  describe "Get Edit" do
+		before(:each) do
+			@attr = {:name => "Sriniuser",:email=> "Sriniuser@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+			@user = User.create!(@attr)
+			test_sign_in(@user)
+		end
+		
+		it "Should be successful" do
+			get :edit, :id => @user
+			response.should be_success
+			#expect(response).to be_success
+		end
+		
+		it "Should have the right title" do
+			get :edit, :id =>@user
+			expect(response).to render_template(:edit)
+		end
+		
+	  #it { should have_content("Update your profile") }
+      #it { should have_title("Edit user") }
+      #it { should have_link('change', href: 'http://gravatar.com/emails') }
+		 
+		# it "Should have a link to change the gravitor" do
+			# get :edit, :id =>@user
+			
+  end
+  
+  describe "Put update" do
+		before(:each) do
+			@attr = {:name => "Sriniuser",:email=> "Sriniuser@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+			@user = User.create!(@attr)
+			test_sign_in(@user)
+		end
+		
+	describe "failure" do
+		before(:each) do
+			@attr = {:name => "",:email=> "", :password => "" , :password_confirmation => ""}
+		end
+		
+		it "Should render the edit page" do
+			put :update, :id=>@user, :user => @attr
+			expect(response).to render_template(:edit)
+			
+		end
+		
+		it "Should have the right title" do
+			put :update, :id=>@user, :user => @attr
+			#expect(response).to render_template(:update)
+		end
+		
+	end
+	
+	describe "Success" do
+		before(:each) do
+			@attr = {:name => "Akshu",:email=> "akshu@gmail.com", :password => "akshu@123" , :password_confirmation => "akshu@123"}
+		end
+		
+		it "Should change the users attributes" do
+			put :update, :id=>@user, :user => @attr
+			user = assigns(:user) 
+			@user.reload
+			@user.name.should == user.name
+			@user.email.should == user.email
+			@user.encrypted_password.should  == user.encrypted_password
+			
+		end
+		
+		it "Should have a flash message" do
+			put :update, :id=>@user, :user => @attr
+			flash[:success].should =~ /updated/i
+			
+		end
+		
+		
+	end
+	
+  end
 
 end
  

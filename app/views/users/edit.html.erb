@@ -1,12 +1,16 @@
 <div class="newpage">
 
-<h1>Sign up</h1>
+<h1>Edit user</h1>
 <%= form_for(@user) do |f| %>
 <!--/*Below line is a partial and pass the value f to get fields.htmlerb should know the value of f*/-->
-	<%= render 'fields', :f => f%>  
+	<%= render 'fields' , :f=> f %> 
 	<div class ="actions">
-		<%= f.submit "Sign up" %>
+		<%= f.submit "Update" %>
 	</div>	
 <% end %>	
+	<div>
+		<%= gravatar_for @user %>
+		<a href="http://gravatar.com/emails" target=_blank>change</a>
+	</div>
 
 </div>
