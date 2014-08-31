@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
 	#handle successful session
 	
 	sign_in user
-	redirect_to user
-						
+	#definition of below method is written in sessions_helper.rb
+	redirect_back_or(user)
 	end
 	
   end

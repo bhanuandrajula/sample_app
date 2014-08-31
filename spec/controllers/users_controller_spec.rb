@@ -186,16 +186,37 @@ end
 			@attr = {:name => "Akshu",:email=> "akshu@gmail.com", :password => "akshu@123" , :password_confirmation => "akshu@123"}
 			@user = User.create!(@attr)
 		end
-		it "Should deny access to edit page" do
-				get :edit, :id=>@user
-				response.should redirect_to(signin_path)
-				flash[:notice].should =~ /sign in/i
+		describe "For non- signed in users" do
+			it "Should deny access to edit page" do
+					get :edit, :id=>@user
+					response.should redirect_to(signin_path)
+					flash[:notice].should =~ /sign in/i
+			end
+			
+			it "Should deny access to update page" do
+					put :edit, :id=>@user, :user => {}
+					response.should redirect_to(signin_path)
+			end			
 		end
 		
-		it "Should deny access to update page" do
-				put :edit, :id=>@user, :user => {}
-				response.should redirect_to(signin_path)
+		describe "For signed in users" do
+		before(:each) do
+			@attr = {:name => "wrong",:email=> "wrong@gmail.com", :password => "akshu@123" , :password_confirmation => "akshu@123"}
+			@wronguser = User.create!(@attr)
+			test_sign_in(@wronguser)
 		end
+		
+			it "Should require matching users for edit" do
+				get :edit, :id=>@user
+				response.should redirect_to(root_path)
+			end
+			it "Should require matching users for update" do
+				put :update, :id=>@user , :user => {}
+				response.should redirect_to(root_path)
+			end
+			
+		end
+
 	end
 
 end

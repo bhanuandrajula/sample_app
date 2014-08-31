@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	#The below line is to authenticate the user if the user is trying to edit or update the profile
 	
 	before_filter :authenticate, :only => [:edit, :update]
+	before_filter :correct_user, :only => [:edit, :update]
 	
   def show
 	#@user = User.find(1)
@@ -55,6 +56,11 @@ class UsersController < ApplicationController
 	def authenticate
 		#flash[:notice] = "Please sign in to access this page."
 		deny_access unless signed_in? #this method deny_access is written in sessions_helper to be generic
+	end
+	
+	def correct_user
+		@user = User.find(params[:id])
+		redirect_to(root_path) unless current_user?(@user)
 	end
   
 end

@@ -22,8 +22,27 @@ module SessionsHelper
 		current_user = nil  # to do this put some code in spec_helper.rb i.e test_sign_in
 	end
 	
+	def current_user?(user)
+		user == current_user
+	end
+	
 	def deny_access
+		store_location
 		redirect_to signin_path, :notice => "Please sign in to access this page."
+	end
+	
+	# Below method is to store the location of cookies from page to page
+	def store_location
+		session[:return_to] = request.fullpath
+	end
+	
+	def redirect_back_or(user)
+		redirect_to(session[:return_to] || user)
+		clear_return_to
+	end
+	
+	def clear_return_to
+		session[:return_to] = nil
 	end
 	
 	private
