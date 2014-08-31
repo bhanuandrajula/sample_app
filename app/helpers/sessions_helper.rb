@@ -22,6 +22,10 @@ module SessionsHelper
 		current_user = nil  # to do this put some code in spec_helper.rb i.e test_sign_in
 	end
 	
+	def deny_access
+		redirect_to signin_path, :notice => "Please sign in to access this page."
+	end
+	
 	private
 	
 	def user_from_remember_token

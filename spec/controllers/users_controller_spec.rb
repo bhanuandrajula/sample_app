@@ -177,13 +177,26 @@ end
 		it "Should have a flash message" do
 			put :update, :id=>@user, :user => @attr
 			flash[:success].should =~ /updated/i
-			
 		end
-		
-		
 	end
 	
   end
+	describe "Authentication of edit/update pages" do
+		before(:each) do
+			@attr = {:name => "Akshu",:email=> "akshu@gmail.com", :password => "akshu@123" , :password_confirmation => "akshu@123"}
+			@user = User.create!(@attr)
+		end
+		it "Should deny access to edit page" do
+				get :edit, :id=>@user
+				response.should redirect_to(signin_path)
+				flash[:notice].should =~ /sign in/i
+		end
+		
+		it "Should deny access to update page" do
+				put :edit, :id=>@user, :user => {}
+				response.should redirect_to(signin_path)
+		end
+	end
 
 end
  
