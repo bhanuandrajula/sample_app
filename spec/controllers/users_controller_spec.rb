@@ -8,7 +8,35 @@ RSpec.describe UsersController, :type => :controller do
  	before(:each) do
 	@attr = {:name => "Sriniuser",:email=> "Sriniuser@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
 	end
-
+	
+	describe "GET 'index'" do
+		describe "For non- signed in users" do
+			it "Should deny access" do
+				get :index
+				response.should redirect_to(signin_path)
+			end
+		end
+		describe "For signed in users" do
+			before(:each) do
+				@attr = {:name => "Sriniuser",:email=> "Sriniuser@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+				@attr1 = {:name => "Sriniuser1",:email=> "Sriniuser1@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+				@attr2 = {:name => "Sriniuser2",:email=> "Sriniuser2@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+				@user = User.create!(@attr)
+				@user1 = User.create!(@attr1)
+				@user2 = User.create!(@attr2)
+				test_sign_in(@user)
+			end
+			it "Should allow access" do
+				get :index
+				response.should be_success
+			end
+			
+			it "Should have the right title" do
+				get :index
+				expect(response).to render_template(:index)
+			end
+		end
+	end
  
  describe "Get Show" do
   		before(:each) do

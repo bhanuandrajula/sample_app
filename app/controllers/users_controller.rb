@@ -2,9 +2,14 @@ class UsersController < ApplicationController
 	
 	#The below line is to authenticate the user if the user is trying to edit or update the profile
 	
-	before_filter :authenticate, :only => [:edit, :update]
+	before_filter :authenticate, :only => [:index, :edit, :update]
 	before_filter :correct_user, :only => [:edit, :update]
 	
+  def index
+	@users = User.all
+	@title = "All Users"
+  end
+  
   def show
 	#@user = User.find(1)
 	@user = User.find(params[:id])

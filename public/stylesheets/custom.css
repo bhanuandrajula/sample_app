@@ -159,3 +159,9 @@ div.newpage{
   @extend .control-group;
   @extend .error;
 }
+
+ul.users{
+	margin-top: 1em;
+	margin-left: 2em;
+	list-style: none;
+}
