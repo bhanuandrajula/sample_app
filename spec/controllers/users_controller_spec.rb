@@ -35,6 +35,14 @@ RSpec.describe UsersController, :type => :controller do
 				get :index
 				expect(response).to render_template(:index)
 			end
+			
+			it "Should have a delete link for admin users" do
+				@user.toggle!(:admin)
+				other_user = User.all.second
+				#get :index
+				#response should have 
+			end
+			
 		end
   end
   
@@ -246,6 +254,45 @@ end
 			
 		end
 
+	end
+	
+	describe " Delete 'destroy'" do
+		before(:each) do
+			@attr = {:name => "wrong",:email=> "wrong@gmail.com", :password => "akshu@123" , :password_confirmation => "akshu@123"}
+			@user = User.create!(@attr)
+		end
+		
+		describe " as a non-signed in user" do
+			it "Should deny access" do
+				delete :destroy , :id=> @user
+				response.should redirect_to(signin_path)
+			end
+		end
+		
+		describe " A non-Admin user" do
+			it "Should protect the action" do
+				test_sign_in(@user)
+				delete :destroy, :id => @user
+				response.should redirect_to(root_path)
+			end
+		end
+		
+		describe "As an admin user" do	
+		
+			before(:each) do
+				
+			end
+			
+			it "Should destroy the user" do
+			end
+			
+			it "Should redirect to the users page" do
+			end
+			
+			it "Should not be able to destroy itself" do
+			end
+		end
+		
 	end
 
 end

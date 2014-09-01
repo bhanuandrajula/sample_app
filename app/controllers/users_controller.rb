@@ -2,8 +2,9 @@ class UsersController < ApplicationController
 	
 	#The below line is to authenticate the user if the user is trying to edit or update the profile
 	
-	before_filter :authenticate, :only => [:index, :edit, :update]
-	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :authenticate, 	:only => [:index, :edit, :update, :destroy]
+	before_filter :correct_user, 	:only => [:edit, :update]
+	before_filter :admin_user,		:only => :destroy
 	
   def index
 	#@users = User.all
@@ -35,6 +36,12 @@ class UsersController < ApplicationController
 		render 'new'
 	end	
 
+  end
+  
+   def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
   end
   
   def edit
@@ -69,5 +76,9 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		redirect_to(root_path) unless current_user?(@user)
 	end
-  
+	
+	def admin_user
+		user = User.find(params[:id])
+		redirect_to(root_path) if (!current_user.admin? || current_user?(user))
+	end
 end
