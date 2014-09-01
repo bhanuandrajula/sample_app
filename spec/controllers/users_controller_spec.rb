@@ -36,7 +36,8 @@ RSpec.describe UsersController, :type => :controller do
 				expect(response).to render_template(:index)
 			end
 		end
-	end
+  end
+  
  
  describe "Get Show" do
   		before(:each) do

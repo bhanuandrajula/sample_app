@@ -6,7 +6,9 @@ class UsersController < ApplicationController
 	before_filter :correct_user, :only => [:edit, :update]
 	
   def index
-	@users = User.all
+	#@users = User.all
+	# Instead of using the above line use below line to use the page no. in the users page
+	@users = User.paginate(:page => params[:page])
 	@title = "All Users"
   end
   
