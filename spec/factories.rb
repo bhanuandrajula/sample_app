@@ -5,7 +5,16 @@ FactoryGirl.define do
     password 'facgirl'
     password_confirmation 'facgirl'
   end
+  
+  factory :micropost do
+  content "Bhanu's microposts"
+  user
 end
+
+
+end
+
+
 
 
 

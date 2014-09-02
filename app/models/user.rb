@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 #attr_accessible :name, :email    	# To change the values by the user in future
 attr_accessor :password 			#just like setter and getter
 
+has_many :microposts, :dependent => :destroy
+
 email_regex = /\A[\w+\-.]+@[a-z.\d\-.]+\.[a-z]+\z/i;
 
 validates :name, 		:presence 		=> true,
