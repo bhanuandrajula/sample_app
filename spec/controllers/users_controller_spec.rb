@@ -52,6 +52,10 @@ RSpec.describe UsersController, :type => :controller do
 			@user = User.create!(@attr)
 		end
 		
+	let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }	
+		
 	it "Should be successful" do
 		get :show, :id => @user
 		response.should be_success
@@ -67,6 +71,10 @@ RSpec.describe UsersController, :type => :controller do
 		expect(response).to render_template(:show)
 	end
 	
+      # it { should have_content(m1.content) }
+      # it { should have_content(m2.content) }
+      # it { should have_content(user.microposts.count) }
+		
 	
 end
 
