@@ -1,0 +1,102 @@
+2014-09-04T21:03:41.284658+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:03:41.284677+00:00 app[web.1]:     6:  <li><%=link_to "Home", root_path %></li>
+2014-09-04T21:03:41.284686+00:00 app[web.1]:   app/helpers/sessions_helper.rb:13:in `current_user'
+2014-09-04T21:03:41.284692+00:00 app[web.1]: 
+2014-09-04T21:04:40.546246+00:00 heroku[router]: at=info method=GET path="/" host=bhanuandrajula.herokuapp.com request_id=67a25817-9c58-403a-b3f1-8620f90ddc03 fwd="174.46.65.165" dyno=web.1 connect=1ms service=33ms status=500 bytes=514
+2014-09-04T21:04:40.512775+00:00 app[web.1]: Started GET "/" for 174.46.65.165 at 2014-09-04 21:04:40 +0000
+2014-09-04T21:04:40.519324+00:00 app[web.1]:   Rendered pages/home.html.erb within layouts/application (0.2ms)
+2014-09-04T21:04:40.535763+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "users" does not exist
+2014-09-04T21:04:40.535798+00:00 app[web.1]: 
+2014-09-04T21:04:40.538835+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2014-09-04T21:04:40.538853+00:00 app[web.1]:   app/helpers/sessions_helper.rb:13:in `current_user'
+2014-09-04T21:04:40.538858+00:00 app[web.1]:   app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1605216230366520871_70091145077660'
+2014-09-04T21:04:40.538859+00:00 app[web.1]: 
+2014-09-04T21:04:40.538860+00:00 app[web.1]: 
+2014-09-04T21:04:40.535774+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2014-09-04T21:04:40.535778+00:00 app[web.1]:                WHERE a.attrelid = '"users"
+'::regclass
+2014-09-04T21:04:40.538831+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2014-09-04T21:04:40.538842+00:00 app[web.1]:     4: <nav class="round">
+2014-09-04T21:04:40.538851+00:00 app[web.1]:   app/models/user.rb:48:in `authenticate_with_salt'
+2014-09-04T21:04:40.538822+00:00 app[web.1]: 
+2014-09-04T21:04:40.538843+00:00 app[web.1]:     5: <ul>
+2014-09-04T21:04:40.538857+00:00 app[web.1]:   app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__3429894882262044957_70091145400500'
+2014-09-04T21:04:40.536507+00:00 app[web.1]:   Rendered layouts/_header.html.erb (8.0ms)
+2014-09-04T21:04:40.538837+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:04:40.538847+00:00 app[web.1]:     8: 	<li><%=link_to "Profile",current_user %></li>
+2014-09-04T21:04:40.536863+00:00 app[web.1]: Completed 500 Internal Server Error in 20ms
+2014-09-04T21:04:40.538828+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:04:40.538839+00:00 app[web.1]:                ORDER BY a.attnum
+2014-09-04T21:04:40.538848+00:00 app[web.1]:     9: 	<li><%=link_to "Users",users_path %></li>
+2014-09-04T21:04:40.538838+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2014-09-04T21:04:40.538854+00:00 app[web.1]:   app/helpers/sessions_helper.rb:17:in `signed_in?'
+2014-09-04T21:04:40.535769+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:04:40.535770+00:00 app[web.1]:                                           ^
+2014-09-04T21:04:40.535772+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2014-09-04T21:04:40.535777+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2014-09-04T21:04:40.538830+00:00 app[web.1]:                                           ^
+2014-09-04T21:04:40.538840+00:00 app[web.1]: ):
+2014-09-04T21:04:40.538849+00:00 app[web.1]:    10: 	<li><%=link_to "Settings",edit_user_path(current_user) %></li>
+2014-09-04T21:04:40.535775+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2014-09-04T21:04:40.535779+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2014-09-04T21:04:40.538833+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2014-09-04T21:04:40.538846+00:00 app[web.1]:     7:  <% if signed_in? %>
+2014-09-04T21:04:40.527739+00:00 app[web.1]:   Rendered layouts/_stylesheets.html.erb (0.5ms)
+2014-09-04T21:04:40.535780+00:00 app[web.1]:                ORDER BY a.attnum
+2014-09-04T21:04:40.538834+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2014-09-04T21:04:40.538852+00:00 app[web.1]:   app/helpers/sessions_helper.rb:51:in `user_from_remember_token'
+2014-09-04T21:04:40.538827+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2014-09-04T21:04:40.538844+00:00 app[web.1]:     6:  <li><%=link_to "Home", root_path %></li>
+2014-09-04T21:04:40.516090+00:00 app[web.1]: Processing by PagesController#home as HTML
+2014-09-04T21:10:56.751265+00:00 heroku[api]: Starting process with command `bundle exec rake db:test:prepare` by bhanua1985@gmail.com
+2014-09-04T21:11:00.128922+00:00 heroku[run.6201]: Awaiting client
+2014-09-04T21:11:00.167577+00:00 heroku[run.6201]: Starting process with command `bundle exec rake db:test:prepare`
+2014-09-04T21:11:00.434468+00:00 heroku[run.6201]: State changed from starting to up
+2014-09-04T21:11:57.538659+00:00 heroku[run.6201]: Client connection closed. Sending SIGHUP to all processes
+2014-09-04T21:11:58.385710+00:00 heroku[run.6201]: Process exited with status 129
+2014-09-04T21:11:58.396932+00:00 heroku[run.6201]: State changed from up to complete
+2014-09-04T21:12:40.292571+00:00 app[web.1]: Started GET "/" for 174.46.65.165 at 2014-09-04 21:12:39 +0000
+2014-09-04T21:12:42.001789+00:00 app[web.1]: Processing by PagesController#home as HTML
+2014-09-04T21:12:42.730896+00:00 app[web.1]:   Rendered pages/home.html.erb within layouts/application (185.1ms)
+2014-09-04T21:12:43.118235+00:00 app[web.1]:   Rendered layouts/_stylesheets.html.erb (119.4ms)
+2014-09-04T21:12:43.809551+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "users" does not exist
+2014-09-04T21:12:43.809558+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:12:43.809590+00:00 app[web.1]:                                           ^
+2014-09-04T21:12:43.809592+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2014-09-04T21:12:43.809600+00:00 app[web.1]:                ORDER BY a.attnum
+2014-09-04T21:12:43.809601+00:00 app[web.1]: 
+2014-09-04T21:12:43.848071+00:00 app[web.1]:   Rendered layouts/_header.html.erb (729.4ms)
+2014-09-04T21:12:43.997020+00:00 app[web.1]: 
+2014-09-04T21:12:43.997026+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2014-09-04T21:12:43.997028+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:12:43.997030+00:00 app[web.1]:                                           ^
+2014-09-04T21:12:43.997031+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2014-09-04T21:12:43.997034+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2014-09-04T21:12:43.997035+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2014-09-04T21:12:43.809594+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2014-09-04T21:12:43.809595+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2014-09-04T21:12:43.809596+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2014-09-04T21:12:43.809597+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:12:43.809599+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2014-09-04T21:12:43.997059+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2014-09-04T21:12:43.997060+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2014-09-04T21:12:43.997062+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2014-09-04T21:12:43.997063+00:00 app[web.1]:                ORDER BY a.attnum
+2014-09-04T21:12:43.997065+00:00 app[web.1]:     4: <nav class="round">
+2014-09-04T21:12:43.997064+00:00 app[web.1]: ):
+2014-09-04T21:12:43.997072+00:00 app[web.1]:     9: 	<li><%=link_to "Users",users_path %></li>
+2014-09-04T21:12:43.997073+00:00 app[web.1]:    10: 	<li><%=link_to "Settings",edit_user_path(current_user) %></li>
+2014-09-04T21:12:43.997074+00:00 app[web.1]:   app/models/user.rb:48:in `authenticate_with_salt'
+2014-09-04T21:12:43.997076+00:00 app[web.1]:   app/helpers/sessions_helper.rb:51:in `user_from_remember_token'
+2014-09-04T21:12:43.997077+00:00 app[web.1]:   app/helpers/sessions_helper.rb:13:in `current_user'
+2014-09-04T21:12:43.997078+00:00 app[web.1]:   app/helpers/sessions_helper.rb:17:in `signed_in?'
+2014-09-04T21:12:43.997079+00:00 app[web.1]:   app/views/layouts/_header.html.erb:7:in `_app_views_layouts__header_html_erb__3429894882262044957_70091145400500'
+2014-09-04T21:12:43.997081+00:00 app[web.1]:   app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__1605216230366520871_70091145077660'
+2014-09-04T21:12:43.997082+00:00 app[web.1]: 
+2014-09-04T21:12:43.997067+00:00 app[web.1]:     5: <ul>
+2014-09-04T21:12:43.997068+00:00 app[web.1]:     6:  <li><%=link_to "Home", root_path %></li>
+2014-09-04T21:12:43.997069+00:00 app[web.1]:     7:  <% if signed_in? %>
+2014-09-04T21:12:43.997070+00:00 app[web.1]:     8: 	<li><%=link_to "Profile",current_user %></li>
+2014-09-04T21:12:43.997083+00:00 app[web.1]: 
+2014-09-04T21:12:43.873397+00:00 app[web.1]: Completed 500 Internal Server Error in 1846ms
+2014-09-04T21:12:44.251447+00:00 heroku[router]: at=info method=GET path="/" host=bhanuandrajula.herokuapp.com request_id=58d6b4e4-8319-41ea-8ce0-6422f6f6f736 fwd="174.46.65.165" dyno=web.1 connect=1ms service=5733ms status=500 bytes=514
