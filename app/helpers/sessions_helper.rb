@@ -26,6 +26,11 @@ module SessionsHelper
 		user == current_user
 	end
 	
+	def authenticate
+		#flash[:notice] = "Please sign in to access this page."
+		deny_access unless signed_in? #this method deny_access is written in sessions_helper to be generic
+	end
+	
 	def deny_access
 		store_location
 		redirect_to signin_path, :notice => "Please sign in to access this page."

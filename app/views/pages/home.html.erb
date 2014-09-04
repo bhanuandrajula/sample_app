@@ -1,3 +1,18 @@
+<% if signed_in? %>
+	<table class="front" summary ="For signed-in users">
+		<tr>
+			<td class="main">
+				<h1 class="micropost">Tweet here</h1>
+				<%= render 'shared/micropost_form' %>
+			</td>
+			<td class="sidebar round">
+				<%= render 'shared/user_info' %>
+			</td>
+		</tr>
+	</table>
+
+<% else %>
+
 <h1>This Application is developed by Bhanu Andrajula</h1>
 <!-- <ul>
 	<li>
@@ -8,3 +23,5 @@
 	</li>
 </ul> -->
 <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+
+<% end %>
