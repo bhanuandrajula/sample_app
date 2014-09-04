@@ -69,6 +69,35 @@ describe MicropostsController do
 			
 		end
 		
+		  describe "DELETE 'destroy'" do
+			
+			describe "for an unauthorized user" do
+				before(:each) do
+					@user_attr = {:name => "Sriniuser",:email=> "Sriniuser1@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+					@wronguser_attr = {:name => "wrong",:email=> "wrong1@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+					@micropost = {:content => "Muthu to get back soon." }
+					@user = User.create!(@user_attr)
+					@wronguser = User.create!(@wronguser_attr)
+					test_sign_in(@wronguser)
+				end
+				
+				it "should deny access" do
+					#delete :destroy, :id => @micropost
+					#response.should redirect_to(root_path)
+				end
+			end
+			
+			
+			describe "for an authorized user" do
+			
+			
+			end
+		  
+		  		
+		
+
+		  end
+		
 	end
 
 end

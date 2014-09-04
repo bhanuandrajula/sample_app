@@ -212,6 +212,22 @@ RSpec.describe User, :type => :model do
 					# end
 			# end
 	   	end	
+		
+		describe "status feed" do
+		
+		  before do
+			@user = User.new(name: "Example User", email: "user@example.com",
+							 password: "foobar", password_confirmation: "foobar")
+		  end
+		
+			it "Should have a status feed" do
+				@user.should respond_to(:feed)
+			end
+			
+			#Skipped some specs for feed bcoz of compatability issues in rspec
+		end
+
+		
 	end	
 end
 
