@@ -1,4 +1,4 @@
-#!/c/Ruby193/bin rake
+#!/c/Ruby193/bin ruby
 require_relative '../config/boot'
 require 'rake'
 Rake.application.run
