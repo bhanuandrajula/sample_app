@@ -229,6 +229,22 @@ RSpec.describe User, :type => :model do
 
 		
 	end	
+	
+	describe "Relation ships" do
+			before do
+				@user = User.new(name: "Example User1", email: "user12@example.com",
+							 password: "foobar", password_confirmation: "foobar")
+			end
+			
+			it "Should have a relationships method" do
+				@user.should respond_to(:relationships)
+			end
+			
+				it { should respond_to(:feed) }
+				it { should respond_to(:relationships) }
+			
+		
+	end
 end
 
 
