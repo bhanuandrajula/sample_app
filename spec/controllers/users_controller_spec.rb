@@ -302,6 +302,22 @@ end
 		end
 		
 	end
+	
+	describe "follow pages" do
+		describe "When not signed in" do
+		
+			it "Should protect 'following'" do
+				get:following, :id => 1
+				response.should redirect_to(signin_path)
+			end
+
+			it "Should protect 'followers'" do
+				get:followers, :id => 1
+				response.should redirect_to(signin_path)
+			end
+			
+		end
+	end
 
 end
  
