@@ -48,7 +48,8 @@ before_save :encrypt_password # before saving the above parameters call the encr
 	end
 	
 	def feed
-		Micropost.where("user_id = ?", id)
+		# Micropost.where("user_id = ?", id) Modified to below line
+		Micropost.from_users_followed_by(self)
 	end
 	
 	def following?(followed)

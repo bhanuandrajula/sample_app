@@ -48,6 +48,43 @@ RSpec.describe Micropost, :type => :model do
 	  # end
 	
   end
+  
+  describe "from_users_followed_by" do
+  
+	  before(:each) do
+	  
+	  	 @firstuser_attr = {:name => "Srini1user",:email=> "Srini1user@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+		 @seconduser_attr = {:name => "Srini2user",:email=> "Srini2user@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+		 @thirduser_attr = {:name => "Srini3user",:email=> "Srini3user@gmail.com", :password => "srini@123" , :password_confirmation => "srini@123"}
+		 @firstuser = User.create!(@firstuser_attr)
+		 @seconduser = User.create!(@seconduser_attr)
+		 @thirduser = User.create!(@thirduser_attr)
+		 
+		 @firstuserpost = @firstuser.microposts.create!(:content => "foo")
+		 @seconduserpost = @seconduser.microposts.create!(:content => "bar")
+		 @thirduserpost = @thirduser.microposts.create!(:content => "baz")
+		 
+		 @firstuser.follow!(@seconduser)
+
+	  end
+	
+	it "Should have a from_users_followed_by method" do
+		Micropost.should respond_to(:from_users_followed_by)
+	end
+	
+	it "Should include followed users micropost" do
+		Micropost.from_users_followed_by(@firstuser).should include(@seconduserpost)
+	end
+	
+	it "Should include the own micropost" do
+		Micropost.from_users_followed_by(@firstuser).should include(@firstuserpost)
+	end
+	
+	it "Should not include the non followed users  micropost" do
+		Micropost.from_users_followed_by(@firstuser).should_not include(@thirduserpost)
+	end
+	
+  end
 end
 
 # == Schema Information
