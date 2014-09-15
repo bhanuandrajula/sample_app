@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 	
 	if @user.save
 		sign_in @user
-		redirect_to user_path(@user), :flash => {:success => "welcome to Bhanu's App"}
+		redirect_to user_path(@user), :flash => {:success => "welcome, Please navigate to Home page to Tweet and navigate to Users page to Follow/Unfollow users"}
 	else
 		@title = "Sign up"
 		render 'new'

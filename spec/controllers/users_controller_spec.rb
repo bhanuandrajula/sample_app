@@ -139,7 +139,7 @@ end
 		
 		it "Should have a welcome message" do
 			post :create, :user =>@attr
-			flash[:success].should =~ /welcome to Bhanu's App/i
+			flash[:success].should =~ /Please navigate to Home page to Tweet/i
 		end
 		
 		it "Should sign the user in" do
